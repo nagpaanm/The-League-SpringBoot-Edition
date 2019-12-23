@@ -1,0 +1,36 @@
+@charset "ISO-8859-1";
+
+body{
+	text-align:center;
+	font-size:1.25em;
+	font-weight:lighter;
+}
+
+form{
+	position:absolute;
+	top:5px;
+	right:5px;
+}
+
+h1{
+	text-transform:uppercase;
+}
+
+h3{
+	text-transform:capitalize;
+}
+
+
+ul{
+	list-style-type:none;
+	width: 60%;
+	text-align:justify;
+}
+
+ul li{
+	margin: 10px;
+}
+
+ul li a{
+	text-decoration:none;
+}

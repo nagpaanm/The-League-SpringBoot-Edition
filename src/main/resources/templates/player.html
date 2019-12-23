@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>View</title>
+<link rel="stylesheet" type="text/css" media="all" 
+	href="../static/css/viewStyle.css"
+	th:href="@{/css/viewStyle.css}"/>
+</head>
+<body>
+	<img th:src="@{/images/nbalogo.jpg}" alt="Image Not Displayed" id="img-logo">
+	<h1>THE LEAGUE</h1>
+	<form action="find" method="GET">
+		Player Name: <input type="text" name="name" required>
+		<input type="submit" value="SEARCH">
+	</form>
+	<div id="parent">
+	<div id="container" class="align">
+		<div id="bg-color"></div>
+		<h3 th:text="${player.name}">Player Name</h3>
+		<h5 th:text="${player.team[0]}" 
+			th:if="*{#strings.length(player.team[0]) > 0}" th:class="${player.teamShort}" id="team"></h5>
+		<h5 th:text="${player.team[1]}" th:if="*{#strings.length(player.team[1]) > 0}" id="record"></h5>
+		<h6 th:text="'Height: ' + ${player.height}"></h6>
+		<h6 th:text="'Weight: ' + ${player.weight}"></h6>
+		<h6 th:text="'Drafted: ' + ${player.draftYear}" th:if="${player.draftYear} > 0"></h6>
+		<img th:src="${player.source}" alt="Image Not Displayed"><br>
+		<table th:if="${player.statsLine!=null and !player.statsLine.isEmpty()}">
+			<tr>
+				<th th:each="header :${player.statsLine[0]}" th:text="${header}">Season</th>
+			</tr>
+			<tr th:each="stat, iStatus : ${player.statsLine}" th:if="${iStatus.index > 0}">
+				<td th:each="s, status : ${stat}" th:text="${stat[status.index]}"></td>
+			</tr>
+		</table>
+	</div>
+	<div id="summary" class=align>
+		<table th:if="${player.summary!=null and !player.summary.isEmpty()}">
+			<caption>Career Recap</caption>
+			<tr>
+				<th th:each="header :${player.summary[0]}" th:text="${header}">Season</th>
+			</tr>
+			<tr th:each="stat, iStatus : ${player.summary}" th:if="${iStatus.index > 0}">
+				<td th:each="s, status : ${stat}" th:text="${stat[status.index]}"></td>
+			</tr>
+			<tr>
+				<th th:each="header :${player.summary[0]}" th:text="${header}">Season</th>
+			</tr>
+		</table>
+	</div>
+	</div>
+	<div id="line">
+		<iframe width="640" height="480" frameborder="0"
+			th:src="'https://www.youtube.com/embed/' + ${player.youtubeUrl}">
+		</iframe>
+	</div>
+	<div class="tables">
+		<table th:if="${player.stats!=null and !player.stats.isEmpty()}">
+			<caption>Regular Season Statistics</caption>
+			<tr>
+				<th th:each="header :${player.stats[0]}" th:text="${header}">Season</th>
+			</tr>
+			<tr th:each="stat, iStatus : ${player.stats}" th:if="${iStatus.index > 0}">
+				<td th:each="s, status : ${stat}" th:text="${stat[status.index]}"></td>
+			</tr>
+		</table>
+		<br>
+		<table th:if="${player.advancedStats!=null and !player.advancedStats.isEmpty()}">
+			<caption>Regular Season Advanced Statistics</caption>
+			<tr>
+				<th th:each="header :${player.advancedStats[0]}" th:text="${header}">Season</th>
+			</tr>
+			<tr th:each="stat, iStatus : ${player.advancedStats}" th:if="${iStatus.index > 0}">
+				<td th:each="s, status : ${stat}" th:text="${stat[status.index]}"></td>
+			</tr>
+		</table>
+		<br>
+		<table th:if="${player.perPossStats!=null and !player.perPossStats.isEmpty()}">
+			<caption>Regular Season Per-100-Possession Statistics</caption>
+			<tr>
+				<th th:each="header :${player.perPossStats[0]}" th:text="${header}">Season</th>
+			</tr>
+			<tr th:each="stat, iStatus : ${player.perPossStats}" th:if="${iStatus.index > 0}">
+				<td th:each="s, status : ${stat}" th:text="${stat[status.index]}"></td>
+			</tr>
+		</table>
+		<br>
+		<table th:if="${player.playoffStats!=null and !player.playoffStats.isEmpty()}">
+			<caption>Playoff Statistics</caption>
+			<tr>
+				<th th:each="header :${player.playoffStats[0]}" th:text="${header}">Season</th>
+			</tr>
+			<tr th:each="stat, iStatus : ${player.playoffStats}" th:if="${iStatus.index > 0}">
+				<td th:each="s, status : ${stat}" th:text="${stat[status.index]}"></td>
+			</tr>
+		</table>
+		<br>
+		<table th:if="${player.playoffAdvancedStats!=null and !player.playoffAdvancedStats.isEmpty()}">
+			<caption>Playoff Advanced Statistics</caption>
+			<tr>
+				<th th:each="header :${player.playoffAdvancedStats[0]}" th:text="${header}">Season</th>
+			</tr>
+			<tr th:each="stat, iStatus : ${player.playoffAdvancedStats}" th:if="${iStatus.index > 0}">
+				<td th:each="s, status : ${stat}" th:text="${stat[status.index]}"></td>
+			</tr>
+		</table>
+		<br>
+		<table th:if="${player.playoffPerPossStats!=null and !player.playoffPerPossStats.isEmpty()}">
+			<caption>Playoff Per-100-Possession Statistics</caption>
+			<tr>
+				<th th:each="header :${player.playoffPerPossStats[0]}" th:text="${header}">Season</th>
+			</tr>
+			<tr th:each="stat, iStatus : ${player.playoffPerPossStats}" th:if="${iStatus.index > 0}">
+				<td th:each="s, status : ${stat}" th:text="${stat[status.index]}"></td>
+			</tr>
+		</table>
+	</div>
+	<a th:href="@{/}" id="go-home">Home</a>
+</body>
+</html>

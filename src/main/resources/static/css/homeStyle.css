@@ -1,0 +1,29 @@
+@charset "ISO-8859-1";
+
+body{
+	text-align:center;
+	font-weight:lighter;
+	font-size:1.5em;
+}
+
+h1{
+	text-transform:uppercase;	
+}
+
+ul{
+	list-style-type:none;
+}
+
+ul > li{
+	display:inline-block;
+	margin: 3% 0.5% 1% 0.5%;
+}
+
+ul > li > a{
+	text-decoration:none;
+}
+
+form{
+	margin:auto;
+	text-transform:uppercase;
+}

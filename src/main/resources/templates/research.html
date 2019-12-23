@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Browse</title>
+<link rel="stylesheet" type="text/css" media="all" 
+	href="../static/css/browseStyle.css"
+	th:href="@{/css/browseStyle.css}"/>
+</head>
+<body>
+	<form action="find" method="GET">
+		Player Name: <input type="text" name="name" required>
+		<input type="submit" value="SEARCH">
+	</form>
+	<h1>The League</h1>
+	<h3>Sorry, we could not find that player.</h3>
+	<h3 th:text="'Did you mean: '" th:if="${pmList != null}")></h3>
+	<ul>
+		<li th:each="name : ${pmList}"><a th:text="${name.last} + ', ' + ${name.first}" th:href="@{find(name=${name.first} + ' ' + ${name.last})}"></a></li>
+	</ul>
+	<a th:href="@{/}">Return</a>
+</body>
+</html>

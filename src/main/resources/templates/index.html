@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>League</title>
+<link rel="stylesheet" type="text/css" media="all" 
+	href="../static/css/homeStyle.css"
+	th:href="@{/css/homeStyle.css}"/>
+</head>
+</head>
+<body>
+	<h1>The League</h1>
+	<img th:src="@{/images/nbalogo.jpg}" alt="Image Not Displayed" width="400">
+	<ul>
+		<li><a th:href="@{browse(param='a')}">A</a></li>
+		<li><a th:href="@{browse(param='b')}">B</a></li>
+		<li><a th:href="@{browse(param='c')}">C</a></li>
+		<li><a th:href="@{browse(param='d')}">D</a></li>
+		<li><a th:href="@{browse(param='e')}">E</a></li>
+		<li><a th:href="@{browse(param='f')}">F</a></li>
+		<li><a th:href="@{browse(param='g')}">G</a></li>
+		<li><a th:href="@{browse(param='h')}">H</a></li>
+		<li><a th:href="@{browse(param='i')}">I</a></li>
+		<li><a th:href="@{browse(param='j')}">J</a></li>
+		<li><a th:href="@{browse(param='k')}">K</a></li>
+		<li><a th:href="@{browse(param='l')}">L</a></li>
+		<li><a th:href="@{browse(param='m')}">M</a></li>
+		<li><a th:href="@{browse(param='n')}">N</a></li>
+		<li><a th:href="@{browse(param='o')}">O</a></li>
+		<li><a th:href="@{browse(param='p')}">P</a></li>
+		<li><a th:href="@{browse(param='q')}">Q</a></li>
+		<li><a th:href="@{browse(param='r')}">R</a></li>
+		<li><a th:href="@{browse(param='s')}">S</a></li>
+		<li><a th:href="@{browse(param='t')}">T</a></li>
+		<li><a th:href="@{browse(param='u')}">U</a></li>
+		<li><a th:href="@{browse(param='v')}">V</a></li>
+		<li><a th:href="@{browse(param='w')}">W</a></li>
+		<li><a th:href="@{browse(param='x')}">X</a></li>
+		<li><a th:href="@{browse(param='y')}">Y</a></li>
+		<li><a th:href="@{browse(param='z')}">Z</a></li>
+	</ul>
+	<form action="find" method="GET">
+		Player Name: <input type="text" name="name" required>
+		<input type="submit" value="SEARCH">
+	</form>
+</body>
+</html>

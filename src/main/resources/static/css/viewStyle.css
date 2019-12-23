@@ -1,0 +1,189 @@
+@charset "ISO-8859-1";
+
+*{
+	margin:0;
+	padding:0;
+}
+
+body{
+	text-align:center;
+	line-height:30px;
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+#img-logo{
+	position:absolute;
+	left:-50px;
+	top:15;
+	width:200px;
+}
+
+h1{
+	text-transform:uppercase;
+	margin: 1% auto 2% auto;
+	color:black;
+}
+
+form{
+	position:absolute;
+	right:5px;
+	top:5px;
+	text-transform:uppercase;
+}
+
+#parent{
+	position:relative;
+	width:100%;
+	overflow:auto;
+}
+
+#container{
+	width:650px;
+}
+
+#container #bg-color{
+	width:100%;
+	height:100%;
+	position:absolute;
+}
+
+
+#container h3{
+	margin: 10px 0;
+	text-transform:capitalize;
+	font-size:2em;
+}
+
+#container h5{
+	font-size:1.15em;
+	margin-bottom:5px;
+}
+
+#container h6{
+	font-size:0.85em;
+}
+
+#container #record{
+	font-style:italic;
+	text-decoration:underline;
+	color:#6866de;
+}
+
+#container #team{
+}
+
+#container img{
+	margin:0 auto 1% auto;
+	width:450px;
+	border-radius:400px;
+	box-shadow:0 0 25px 0 black;
+}
+
+#container table{
+	font-size: 1em;
+	border-collapse: collapse;
+	border-left:2px solid #f09067;
+	border-right:2px solid #f09067;
+	border-bottom:4px solid #f09067;
+}
+
+#container th{
+	color:#e86127;
+}
+
+#container table td, #container table th{
+	padding: 4px 8px 4px 8px;
+}
+
+.align{
+}
+
+#summary table{
+	position:absolute;
+	right:5px;
+	top:0px;
+	text-align:center;
+	width:725px;
+	background-color:#fafafa;
+	box-shadow:0 0 10px 0 black;
+}
+
+#summary table caption{
+	font-size:1.5em;
+	color:white;
+	background-image:linear-gradient(#5998f0, #4b8eeb, #2d83fa);
+	padding:10px 0;
+	text-transform:uppercase;
+	letter-spacing:3px;
+}
+
+
+#summary table th{
+	color:#4b8eeb;
+}
+
+#summary table td{
+	font-size:0.8em
+}
+
+
+#summarry table tr:nth-child(even){
+
+}
+
+#summary table tr:hover{
+	background-color: #ddd;
+}
+
+#line{
+	margin-top:1%;
+}
+
+#line iframe{
+	width:640px;
+}
+
+.tables{
+	margin:2% 0;
+}
+
+.tables table{
+	margin: 0 auto 0 auto;
+	text-align:center;
+	width:90%;
+	background-color:#fafafa;
+	box-shadow:0 0 10px 0 black;
+	
+}
+
+.tables caption{
+	font-size:1.5em;
+	color:white;
+	background-image:linear-gradient(#5998f0, #4b8eeb, #2d83fa);
+	padding:10px 0;
+	text-transform:uppercase;
+	letter-spacing:3px;
+}
+
+.tables th{
+	color:#4b8eeb;
+}
+
+.tables td{
+	font-size:0.8em
+}
+
+
+.tables table tr:nth-child(even){
+
+}
+
+.tables table tr:hover{
+	background-color: #ddd;
+}
+
+#go-home{
+	font-size:1.25em;
+	text-transform:uppercase;
+	letter-spacing:4px;
+}
